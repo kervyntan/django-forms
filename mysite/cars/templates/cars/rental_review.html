@@ -1,0 +1,24 @@
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+
+</head>
+
+    <body>
+
+        <h1> RENTAL REVIEW FORM </h1>
+
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}  <!-- can use form.as_p to make each field a separate paragraph -->
+            <!-- can use form.as_ul to make each field a separate list item etc. -->
+        <input type="submit">
+        </form>
+
+    </body>
+</html>
