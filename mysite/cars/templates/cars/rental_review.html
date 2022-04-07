@@ -15,7 +15,14 @@
 
         <form method="POST">
             {% csrf_token %}
-            {{form.as_p}}  <!-- can use form.as_p to make each field a separate paragraph -->
+            {{form.as_p}} 
+            {{form.first_name.label_tag}} {{form.first_name}}
+            
+            {% for field in form %}
+            <div class="form-control">
+                {{field.label_tag}} {{field}}
+            </div>
+            {% endfor %}<!-- can use form.as_p to make each field a separate paragraph -->
             <!-- can use form.as_ul to make each field a separate list item etc. -->
         <input type="submit">
         </form>

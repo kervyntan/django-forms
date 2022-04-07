@@ -11,6 +11,7 @@ def rental_review (request):
         form = ReviewForm(request.POST) # section 13, video 
         if form.is_valid():
             print(form.cleaned_data) # eg. cleaned_data =  {'first_name' : what the user passed in, 'last_name' : ... }
+            form.save()
             return redirect(reverse('cars:thank_you'))
 
 
